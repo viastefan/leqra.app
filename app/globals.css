@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --background: 0 0% 2%;
+  --foreground: 0 0% 96%;
+  --surface: 240 7% 5%;
+  --surface-2: 240 5% 8%;
+  --line: 0 0% 100% / .07;
+  --muted: 240 5% 65%;
+  --subtle: 240 5% 45%;
+  --accent: 0 0% 96%;
+  --accent-text: 0 0% 5%;
+  --success: 154 58% 60%;
+  --warning: 38 82% 64%;
+  --danger: 358 78% 68%;
+}
+
+.theme-light {
+  color-scheme: light;
+  --background: 0 0% 97%;
+  --foreground: 240 7% 7%;
+  --surface: 0 0% 100%;
+  --surface-2: 240 9% 94%;
+  --line: 240 6% 10% / .09;
+  --muted: 240 5% 36%;
+  --subtle: 240 4% 48%;
+  --accent: 240 7% 7%;
+  --accent-text: 0 0% 98%;
+}
+
+.accent-mint {
+  --accent: 154 58% 60%;
+  --accent-text: 160 28% 6%;
+}
+
+.accent-violet {
+  --accent: 255 72% 72%;
+  --accent-text: 260 40% 8%;
+}
+
+.accent-blue {
+  --accent: 211 92% 70%;
+  --accent-text: 215 40% 8%;
+}
+
+.accent-amber {
+  --accent: 38 82% 64%;
+  --accent-text: 38 42% 8%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: hsl(var(--background));
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 65% -10%, rgba(255,255,255,.08), transparent 28rem),
+    hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-feature-settings: "liga" 1, "kern" 1;
+  text-rendering: geometricPrecision;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: hsla(var(--accent), .28);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, .12);
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+
+.theme-light ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, .18);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+
+.hairline {
+  border-color: hsla(var(--line));
+}
+
+.quiet-panel {
+  background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.018));
+  border: 1px solid hsla(var(--line));
+}
+
+.theme-light .quiet-panel {
+  background: rgba(255,255,255,.7);
+}
+
+.graph-grid {
+  background-image:
+    linear-gradient(hsla(var(--line)) 1px, transparent 1px),
+    linear-gradient(90deg, hsla(var(--line)) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(circle at center, black, transparent 78%);
+}
